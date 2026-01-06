@@ -1,0 +1,16 @@
+## Linux basic commands
+
+mkdir -> Use to make folder or directories
+cd -> Use to change dierctory
+ls -> list all directories and files
+touch -> create an empty file
+pwd -> give path or location of present working dierctory
+rmdir -> remove dierctory
+cp -> to copy file/folder
+mv -> to move one folder/file to another location
+echo -> to show the output or print something
+cat -> to display file contents and write something in file
+grep -> to search the text in a file
+head -> give first n number of lines
+tail -> give last n number of lines
+chmod -> to change file permission
