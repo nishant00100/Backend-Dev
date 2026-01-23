@@ -1,0 +1,1 @@
+Product: Shoes | Price: 3000 | Discount: 20% | Final Price: 2400
