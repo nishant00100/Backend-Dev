@@ -1,0 +1,127 @@
+// //1. Difference between Synchronous and Asynchronous File Operations
+
+// Synchronous File Operations
+
+// Block the execution
+
+// yes
+
+// Perfect 👍
+// Here is the complete answer written in a proper, clean, and formal manner, suitable for exams, assignments, and viva.
+
+// 1. Difference between Synchronous and Asynchronous File Operations
+
+// Synchronous File Operations:
+
+// Execute one operation at a time.
+
+// Block the execution of the program until the file operation is completed.
+
+// The next line of code runs only after completion.
+
+// Suitable for small scripts or startup tasks.
+
+// Asynchronous File Operations:
+
+// Non-blocking in nature.
+
+// File operations run in the background.
+
+// Program continues execution without waiting.
+
+// Preferred in Node.js for better performance.
+
+// 2. When Should You Use File Streams Instead of Reading the Entire File?
+
+// File streams should be used when:
+
+// The file size is very large.
+
+// Memory usage needs to be minimized.
+
+// Data must be processed in parts (chunks).
+
+// Performing file transfers such as uploads, downloads, or copying files.
+
+// Streams are more efficient than reading the entire file into memory.
+
+// 3. Purpose of the utf8 Encoding Parameter in File Operations
+
+// The utf8 encoding parameter:
+
+// Converts binary data into human-readable text.
+
+// Ensures correct interpretation of characters.
+
+// Prevents returning data in raw buffer format.
+
+// Using utf8 allows text files to be read and written correctly.
+
+// 4. Common Error Codes in File System Operations
+
+// Some commonly encountered file system error codes are:
+
+// ENOENT – File or directory does not exist.
+
+// EACCES – Permission denied.
+
+// EISDIR – Operation expected a file but found a directory.
+
+// ENOTDIR – Operation expected a directory but found a file.
+
+// EEXIST – File or directory already exists.
+
+// EMFILE – Too many open files.
+
+// These error codes help in identifying and handling specific file system issues.
+
+// 5. How to Safely Delete a Directory with All Its Contents
+
+// A directory can be safely deleted along with all its contents using recursive deletion.
+
+// Recursive deletion removes all files and subdirectories.
+
+// Force deletion ignores errors if the directory does not exist.
+
+// This method should be used cautiously as deletion is permanent.
+
+// 6. Concept of Piping in Streams
+
+// Piping is a mechanism that connects the output of one stream to the input of another.
+
+// It transfers data automatically in chunks.
+
+// Improves performance and reduces memory usage.
+
+// Example:
+// Copying data from one file to another using streams.
+
+// 7. Importance of Handling Errors in File Operations
+
+// Handling errors is important because:
+
+// Files may not exist or may be inaccessible.
+
+// Permission issues can occur.
+
+// Disk failures or memory issues may arise.
+
+// Prevents application crashes.
+
+// Proper error handling ensures application stability and reliability.
+
+// 8. Difference between writeFile and appendFile Methods
+
+// writeFile Method:
+
+// Writes data to a file.
+
+// Overwrites existing content.
+
+// appendFile Method:
+
+// Adds data to the end of an existing file.
+
+// Preserves previous content.
+
+// Both methods are used for writing data but differ in how they handle existing content.
