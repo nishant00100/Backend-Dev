@@ -1,0 +1,176 @@
+db.students.insertMany([
+  { name: "Rahul", age: 19, course: "BCA", city: "Delhi", feesPaid: true },
+  { name: "Amit", age: 21, course: "BBA", city: "Noida", feesPaid: false },
+  { name: "Rahul", age: 23, course: "BCA", city: "Agra", feesPaid: true },
+  { name: "Sneha", age: 22, course: "MCA", city: "Lucknow", feesPaid: false },
+  { name: "Priya", age: 24, course: "BTech", city: "Kanpur", feesPaid: true }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69ba77c2186ab9033e297ad8'),
+    '1': ObjectId('69ba77c2186ab9033e297ad9'),
+    '2': ObjectId('69ba77c2186ab9033e297ada'),
+    '3': ObjectId('69ba77c2186ab9033e297adb'),
+    '4': ObjectId('69ba77c2186ab9033e297adc')
+  }
+}
+db.students.find()
+{
+  _id: ObjectId('69ba7184e4bffe88afce5748'),
+  name: 'studentD',
+  college: 'GLA'
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297ad8'),
+  name: 'Rahul',
+  age: 19,
+  course: 'BCA',
+  city: 'Delhi',
+  feesPaid: true
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297ad9'),
+  name: 'Amit',
+  age: 21,
+  course: 'BBA',
+  city: 'Noida',
+  feesPaid: false
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297ada'),
+  name: 'Rahul',
+  age: 23,
+  course: 'BCA',
+  city: 'Agra',
+  feesPaid: true
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297adb'),
+  name: 'Sneha',
+  age: 22,
+  course: 'MCA',
+  city: 'Lucknow',
+  feesPaid: false
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297adc'),
+  name: 'Priya',
+  age: 24,
+  course: 'BTech',
+  city: 'Kanpur',
+  feesPaid: true
+}
+db.students.find({ course: "BCA" })
+{
+  _id: ObjectId('69ba77c2186ab9033e297ad8'),
+  name: 'Rahul',
+  age: 19,
+  course: 'BCA',
+  city: 'Delhi',
+  feesPaid: true
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297ada'),
+  name: 'Rahul',
+  age: 23,
+  course: 'BCA',
+  city: 'Agra',
+  feesPaid: true
+}
+db.students.find({ age: { $gt: 20 } })
+{
+  _id: ObjectId('69ba77c2186ab9033e297ad9'),
+  name: 'Amit',
+  age: 21,
+  course: 'BBA',
+  city: 'Noida',
+  feesPaid: false
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297ada'),
+  name: 'Rahul',
+  age: 23,
+  course: 'BCA',
+  city: 'Agra',
+  feesPaid: true
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297adb'),
+  name: 'Sneha',
+  age: 22,
+  course: 'MCA',
+  city: 'Lucknow',
+  feesPaid: false
+}
+{
+  _id: ObjectId('69ba77c2186ab9033e297adc'),
+  name: 'Priya',
+  age: 24,
+  course: 'BTech',
+  city: 'Kanpur',
+  feesPaid: true
+}
+db.students.find({}, { name: 1, course: 1, _id: 0 })
+{
+  name: 'studentD'
+}
+{
+  name: 'Rahul',
+  course: 'BCA'
+}
+{
+  name: 'Amit',
+  course: 'BBA'
+}
+{
+  name: 'Rahul',
+  course: 'BCA'
+}
+{
+  name: 'Sneha',
+  course: 'MCA'
+}
+{
+  name: 'Priya',
+  course: 'BTech'
+}
+db.students.updateOne(
+  { name: "Amit" },
+  { $set: { city: "Gurgaon" } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.updateMany(
+  { course: "BCA" },
+  { $set: { course: "MCA" } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.students.updateMany(
+  { age: { $gt: 22 } },
+  { $set: { feesPaid: true } }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.students.deleteMany({ feesPaid: false })
+{
+  acknowledged: true,
+  deletedCount: 2
+}
+db.students.deleteMany({ age: { $lt: 20 } })
